@@ -28,17 +28,13 @@ class Beranda : Fragment() {
 
         recyclerView = view.findViewById(R.id.item_list)
 
-        // Menginisialisasi adapter dan layout manager untuk RecyclerView
         adapter = TugasAdapter()
         layoutManager = LinearLayoutManager(activity)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
-
-        // Mendapatkan referensi database
         databaseRef = FirebaseDatabase.getInstance().reference.child("tugas")
 
-        // Mendapatkan data tugas dari Firebase dan mengupdate RecyclerView
         getTugasFromFirebase()
 
         return view
@@ -56,7 +52,6 @@ class Beranda : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle error
             }
         })
     }

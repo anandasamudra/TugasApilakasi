@@ -50,8 +50,6 @@ class Login : AppCompatActivity() {
                     deleteFirebaseDatabase()
                 }
             } else {
-                // Pengguna telah logout
-                // Hapus seluruh database di Firebase
                 deleteFirebaseDatabase()
             }
         })
@@ -141,7 +139,6 @@ class Login : AppCompatActivity() {
                 }
             }
     }
-
     private fun deleteFirebaseDatabase() {
         val databaseRef = FirebaseDatabase.getInstance().reference
         databaseRef.setValue(null)

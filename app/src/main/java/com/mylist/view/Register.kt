@@ -48,9 +48,7 @@ class Register : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                // Registrasi berhasil, lakukan tindakan yang diinginkan
                                 Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
-                                // Contoh: Pindah ke halaman utama aplikasi
                                 val profileUpdates = userProfileChangeRequest {
                                     displayName = fullName
                                 }
@@ -63,7 +61,6 @@ class Register : AppCompatActivity() {
                                         Toast.makeText(this, error2.localizedMessage, Toast.LENGTH_SHORT).show()
                                     }
                             } else {
-                                // Registrasi gagal, tampilkan pesan error
                                 Toast.makeText(this, "Registrasi gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                             }
                         }
@@ -76,7 +73,6 @@ class Register : AppCompatActivity() {
         }
 
         toLoginTextView.setOnClickListener {
-            // Pindah ke halaman login
             startActivity(Intent(this, Login::class.java))
             finish()
         }

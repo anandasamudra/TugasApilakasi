@@ -12,10 +12,8 @@ import com.mylist.R
 class SplassScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //transparns actionbar material1
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         setContentView(R.layout.activity_splass_screen)
-        //transparns actionbar material1
         supportActionBar?.hide()
         val handler= Handler(Looper.getMainLooper())
         handler.postDelayed({

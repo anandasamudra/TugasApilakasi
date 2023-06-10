@@ -14,14 +14,11 @@ class TugasAdapter() : RecyclerView.Adapter<TugasAdapter.TugasViewHolder>() {
     private var tugasList: List<Tugas> = emptyList()
 
     inner class TugasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Deklarasikan elemen-elemen UI pada item layout
-        // Misalnya, TextView untuk judul tugas
         private val judulTextView: TextView = itemView.findViewById(R.id.tv_judul)
         private val deskripsiTextView: TextView = itemView.findViewById(R.id.tv_deskripsi)
         private val tanggalTextView: TextView = itemView.findViewById(R.id.tv_tanggal)
 
         fun bind(tugas: Tugas) {
-            // Set nilai dari elemen-elemen UI berdasarkan data tugas
             judulTextView.text = tugas.judul
             tanggalTextView.text = tugas.tanggal
             deskripsiTextView.text = tugas.deskripsi
